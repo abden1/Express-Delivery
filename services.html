@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Delivery | خدماتنا</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- نفس الهيدر من index.html -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-contact">
+                    <a href="tel:920000000"><i class="fas fa-phone"></i> 920000000</a>
+                    <a href="mailto:info@expressdelivery.com"><i class="fas fa-envelope"></i> info@expressdelivery.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <i class="fas fa-truck-fast"></i>
+                            <span class="fast-line"></span>
+                        </div>
+                        <div class="logo-text">
+                            <span class="company-name">Express</span>
+                            <span class="company-slogan">Delivery</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+                    <a href="services.html"><i class="fas fa-cube"></i> خدماتنا</a>
+                    <a href="tracking.html"><i class="fas fa-map-marker-alt"></i> تتبع شحنتك</a>
+                    <a href="prices.html"><i class="fas fa-tag"></i> الأسعار</a>
+                    <a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+                </div>
+    
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <main>
+        <section class="services-hero">
+            <div class="hero-content">
+                <h1 class="animate-text">خدماتنا المميزة</h1>
+                <p class="animate-text delay-1">نقدم مجموعة متكاملة من خدمات التوصيل السريع</p>
+            </div>
+        </section>
+
+        <section class="services-grid">
+            <div id="fast-delivery" class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <h3>توصيل سريع</h3>
+                <p>خدمة توصيل خلال 24 ساعة لجميع مناطق المملكة</p>
+                <img src="/api/placeholder/400/300" alt="توصيل سريع" usemap="#deliveryMap" class="service-image">
+                <map name="deliveryMap">
+                    <area shape="rect" coords="0,0,400,300" href="contact.html" alt="اتصل بنا للتوصيل السريع">
+                </map>
+            </div>
+
+            <div id="international" class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>شحن دولي</h3>
+                <p>خدمات شحن لجميع دول العالم بأسعار تنافسية</p>
+            </div>
+
+            <div id="tracking" class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+                <h3>تتبع الشحنات</h3>
+                <p>تابع شحنتك لحظة بلحظة</p>
+                <a href="tracking.html" class="btn primary-btn">تتبع شحنتك</a>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <h2>اطلب خدمة التوصيل</h2>
+            <form class="order-form">
+                <div class="form-group">
+                    <label>نوع الخدمة</label>
+                    <select required>
+                        <option value="">اختر نوع الخدمة</option>
+                        <option value="fast">توصيل سريع</option>
+                        <option value="international">شحن دولي</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>تفاصيل الشحنة</label>
+                    <textarea required placeholder="اكتب تفاصيل شحنتك هنا"></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">إرسال الطلب</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- نفس الفوتر -->
+</body>
+</html>
+
+<!-- tracking.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Delivery | تتبع الشحنة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- نفس الهيدر -->
+
+    <main>
+        <section class="tracking-hero">
+            <h1 class="animate-text">تتبع شحنتك</h1>
+            <div class="tracking-form">
+                <input type="text" placeholder="أدخل رقم التتبع" id="tracking-number">
+                <button onclick="trackShipment()" class="btn primary-btn">تتبع</button>
+            </div>
+        </section>
+
+        <section class="tracking-results">
+            <div id="tracking-status" class="status-timeline">
+                <!-- سيتم تحديث هذا القسم ديناميكياً -->
+            </div>
+        </section>
+    </main>
+
+    <!-- نفس الفوتر -->
+
+    <script>
+        // دالة تتبع الشحنة
+        function trackShipment() {
+            const trackingNumber = document.getElementById('tracking-number').value;
+            const statusDiv = document.getElementById('tracking-status');
+            
+            // تنظيف المحتوى السابق
+            statusDiv.innerHTML = '';
+            
+            // مصفوفة حالات الشحنة
+            const statuses = [
+                {
+                    status: 'تم استلام الطلب',
+                    date: '2024-01-06 09:00',
+                    icon: 'fa-box'
+                },
+                {
+                    status: 'في المستودع',
+                    date: '2024-01-06 11:30',
+                    icon: 'fa-warehouse'
+                },
+                {
+                    status: 'جاري التوصيل',
+                    date: '2024-01-06 14:00',
+                    icon: 'fa-truck'
+                },
+                {
+                    status: 'تم التسليم',
+                    date: '2024-01-06 16:00',
+                    icon: 'fa-check-circle'
+                }
+            ];
+            
+            // إضافة كل حالة للتايم لاين
+            statuses.forEach((status, index) => {
+                const statusElement = document.createElement('div');
+                statusElement.className = 'status-item';
+                statusElement.innerHTML = `
+                    <div class="status-icon">
+                        <i class="fas ${status.icon}"></i>
+                    </div>
+                    <div class="status-content">
+                        <h3>${status.status}</h3>
+                        <p>${status.date}</p>
+                    </div>
+                `;
+                
+                // إضافة تأخير للظهور
+                setTimeout(() => {
+                    statusDiv.appendChild(statusElement);
+                    statusElement.classList.add('active');
+                }, index * 1000);
+            });
+        }
+    </script>
+</body>
+</html>

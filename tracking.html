@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تتبع شحنتك | Express Delivery</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-contact">
+                    <a href="tel:920000000"><i class="fas fa-phone"></i> 920000000</a>
+                    <a href="mailto:info@expressdelivery.com"><i class="fas fa-envelope"></i> info@expressdelivery.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <i class="fas fa-truck-fast"></i>
+                            <span class="fast-line"></span>
+                        </div>
+                        <div class="logo-text">
+                            <span class="company-name">Express</span>
+                            <span class="company-slogan">Delivery</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+                    <a href="services.html"><i class="fas fa-cube"></i> خدماتنا</a>
+                    <a href="tracking.html"><i class="fas fa-map-marker-alt"></i> تتبع شحنتك</a>
+                    <a href="prices.html"><i class="fas fa-tag"></i> الأسعار</a>
+                    <a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+                </div>
+    
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <div class="container">
+        <div class="search-section">
+            <h1>تتبع شحنتك</h1>
+            <div class="search-box">
+                <input type="text" id="tracking-number" placeholder="أدخل رقم التتبع" maxlength="10">
+                <button onclick="trackShipment()" class="search-btn">
+                    <i class="fas fa-search"></i> تتبع
+                </button>
+            </div>
+            <div id="error-message" class="error"></div>
+        </div>
+
+        <div id="result-section" class="result-section hidden">
+            <div class="shipment-details">
+                <div class="detail-card">
+                    <h3>رقم الشحنة</h3>
+                    <p id="shipment-id"></p>
+                </div>
+                <div class="detail-card">
+                    <h3>الحالة</h3>
+                    <p id="shipment-status"></p>
+                </div>
+                <div class="detail-card">
+                    <h3>تاريخ الشحن</h3>
+                    <p id="shipment-date"></p>
+                </div>
+                <div class="detail-card">
+                    <h3>المدينة</h3>
+                    <p id="shipment-city"></p>
+                </div>
+            </div>
+
+            <div class="timeline" id="shipment-timeline">
+                <!-- سيتم إضافة مراحل الشحن هنا -->
+            </div>
+
+            <div class="map-section">
+                <h2>موقع الشحنة</h2>
+                <div class="map-container" id="map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>خريطة تتبع الشحنة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Delivery | الأسعار</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- نفس الهيدر -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-contact">
+                    <a href="tel:920000000"><i class="fas fa-phone"></i> 920000000</a>
+                    <a href="mailto:info@expressdelivery.com"><i class="fas fa-envelope"></i> info@expressdelivery.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <i class="fas fa-truck-fast"></i>
+                            <span class="fast-line"></span>
+                        </div>
+                        <div class="logo-text">
+                            <span class="company-name">Express</span>
+                            <span class="company-slogan">Delivery</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+                    <a href="services.html"><i class="fas fa-cube"></i> خدماتنا</a>
+                    <a href="tracking.html"><i class="fas fa-map-marker-alt"></i> تتبع شحنتك</a>
+                    <a href="prices.html"><i class="fas fa-tag"></i> الأسعار</a>
+                    <a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+                </div>
+    
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="prices-hero">
+            <h1 class="animate-text">أسعار الشحن والتوصيل</h1>
+            <p class="animate-text delay-1">أفضل الأسعار مع خدمة متميزة</p>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="switchTab('local')">
+                    <i class="fas fa-truck"></i> توصيل محلي
+                </button>
+                <button class="tab-btn" onclick="switchTab('international')">
+                    <i class="fas fa-plane"></i> شحن دولي
+                </button>
+            </div>
+
+            <div id="local" class="price-cards tab-content active">
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>التوصيل السريع</h3>
+                        <div class="price">
+                            <span class="amount">50</span>
+                            <span class="currency">ريال</span>
+                        </div>
+                    </div>
+                    <div class="price-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> توصيل خلال 24 ساعة</li>
+                            <li><i class="fas fa-check"></i> تغطية داخل المدينة</li>
+                            <li><i class="fas fa-check"></i> تتبع مباشر للشحنة</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn primary-btn">اطلب الآن</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="price-header">
+                        <div class="featured-badge">الأكثر طلباً</div>
+                        <h3>توصيل بين المدن</h3>
+                        <div class="price">
+                            <span class="amount">100</span>
+                            <span class="currency">ريال</span>
+                        </div>
+                    </div>
+                    <div class="price-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> توصيل خلال 48 ساعة</li>
+                            <li><i class="fas fa-check"></i> تغطية جميع مدن المملكة</li>
+                            <li><i class="fas fa-check"></i> تأمين على الشحنة</li>
+                            <li><i class="fas fa-check"></i> تتبع مباشر للشحنة</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn primary-btn">اطلب الآن</a>
+                </div>
+            </div>
+
+            <div id="international" class="price-cards tab-content">
+                <!-- محتوى الشحن الدولي -->
+            </div>
+        </section>
+
+        <section class="price-calculator">
+            <h2>احسب تكلفة الشحن</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label>من</label>
+                    <select id="from-city">
+                        <option value="riyadh">الرياض</option>
+                        <option value="jeddah">جدة</option>
+                        <option value="dammam">الدمام</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>إلى</label>
+                    <select id="to-city">
+                        <option value="riyadh">الرياض</option>
+                        <option value="jeddah">جدة</option>
+                        <option value="dammam">الدمام</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>الوزن (كجم)</label>
+                    <input type="number" id="weight" min="1">
+                </div>
+                <button onclick="calculatePrice()" class="btn primary-btn">احسب التكلفة</button>
+                <div id="price-result" class="calculator-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- نفس الفوتر -->
+
+    <script>
+        function switchTab(tabId) {
+            // إخفاء كل المحتوى
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // إظهار المحتوى المطلوب
+            document.getElementById(tabId).classList.add('active');
+            
+            // تحديث الأزرار
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        function calculatePrice() {
+            const fromCity = document.getElementById('from-city').value;
+            const toCity = document.getElementById('to-city').value;
+            const weight = document.getElementById('weight').value;
+            
+            // حساب بسيط للسعر
+            let basePrice = 50;
+            if (fromCity !== toCity) {
+                basePrice = 100;
+            }
+            
+            const totalPrice = basePrice + (weight * 10);
+            
+            // عرض النتيجة
+            const resultDiv = document.getElementById('price-result');
+            resultDiv.innerHTML = `
+                <div class="price-result-box">
+                    <h3>تكلفة الشحن المقدرة</h3>
+                    <div class="calculated-price">${totalPrice} ريال</div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

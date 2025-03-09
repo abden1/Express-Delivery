@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Delivery | اتصل بنا</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- نفس الهيدر -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-contact">
+                    <a href="tel:920000000"><i class="fas fa-phone"></i> 920000000</a>
+                    <a href="mailto:info@expressdelivery.com"><i class="fas fa-envelope"></i> info@expressdelivery.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <i class="fas fa-truck-fast"></i>
+                            <span class="fast-line"></span>
+                        </div>
+                        <div class="logo-text">
+                            <span class="company-name">Express</span>
+                            <span class="company-slogan">Delivery</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+                    <a href="services.html"><i class="fas fa-cube"></i> خدماتنا</a>
+                    <a href="tracking.html"><i class="fas fa-map-marker-alt"></i> تتبع شحنتك</a>
+                    <a href="prices.html"><i class="fas fa-tag"></i> الأسعار</a>
+                    <a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+                </div>
+    
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="contact-hero">
+            <h1 class="animate-text">تواصل معنا</h1>
+            <p class="animate-text delay-1">نحن هنا لمساعدتك</p>
+        </section>
+
+        <section class="contact-grid">
+            <div class="contact-info-card">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <h3>اتصل بنا</h3>
+                        <p>
+                            <a href="tel:+966500000000" class="contact-link">
+                                +966 50 000 0000
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <h3>راسلنا</h3>
+                        <p>
+                            <a href="mailto:info@express.com" class="contact-link">
+                                info@express.com
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>موقعنا</h3>
+                        <p>الرياض، المملكة العربية السعودية</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <h2>إرسال رسالة</h2>
+                <form id="contactForm" class="contact-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label>الاسم</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الموضوع</label>
+                        <select required>
+                            <option value="">اختر الموضوع</option>
+                            <option value="inquiry">استفسار عام</option>
+                            <option value="quote">طلب سعر</option>
+                            <option value="support">دعم فني</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الرسالة</label>
+                        <textarea required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>كم تستغرق عملية التوصيل؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يعتمد وقت التوصيل على المنطقة. داخل المدينة خلال 24 ساعة، وبين المدن 48-72 ساعة.</p>
+                    </div>
+                </div>
+                <!-- المزيد من الأسئلة -->
+            </div>
+        </section>
+    </main>
+
+    <!-- نفس الفوتر -->
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            // يمكن إضافة منطق إرسال النموذج هنا
+            alert('تم إرسال رسالتك بنجاح!');
+            event.target.reset();
+        }
+
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+            const answer = element.nextElementSibling;
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
